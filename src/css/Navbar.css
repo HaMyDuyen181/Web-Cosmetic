@@ -1,0 +1,99 @@
+/* Basic header styles */
+.header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.header-main {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.col-search {
+    flex-grow: 1;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search-input {
+    width: 80%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.col-widgets {
+    display: flex;
+    align-items: center;
+}
+
+.widget-header {
+    margin-left: 15px;
+}
+
+.widget-header .fa {
+    font-size: 20px;
+}
+
+.widget-header .text {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.navbar {
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    padding: 10px 0;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
