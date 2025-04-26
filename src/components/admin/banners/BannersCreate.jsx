@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -27,9 +28,8 @@ const BannersCreate = () => {
     const fileName = imageFile.name;
   
     const formData = new FormData();
-    formData.append('imageFile', imageFile);
-    formData.append('link', link);
-    formData.append('imageUrl', `/images/banner/${fileName}`); // thêm dòng này nếu backend yêu cầu
+    formData.append('ImageFile', imageFile);  // Thêm ảnh vào formData
+    formData.append('Link', link);  // Thêm link vào formData
   
     try {
       await axios.post('https://localhost:7177/api/Banner', formData, {

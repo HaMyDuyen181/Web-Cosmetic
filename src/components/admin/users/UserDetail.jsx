@@ -32,23 +32,33 @@ const UserDetail = () => {
     navigate('/admin/users'); // Quay lại trang danh sách người dùng
   };
 
-  if (error) return <p className="text-danger">{error}</p>;
+  if (error) return <div className="alert alert-danger">{error}</div>;
 
-  if (!user) return <p>Đang tải thông tin người dùng...</p>;
+  if (!user) return <div className="alert alert-info">Đang tải thông tin người dùng...</div>;
 
   return (
     <div className="container mt-4">
-      <h2>Chi tiết Người dùng</h2>
+      <h2 className="text-center mb-4">Chi tiết Người dùng</h2>
 
-      <div>
-        <p><strong>Họ tên:</strong> {user.fullname}</p>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Tên đăng nhập:</strong> {user.username}</p>
-        <p><strong>Vai trò:</strong> {user.role}</p>
+      <div className="card p-4 shadow-sm">
+        <div className="mb-3">
+          <strong>Họ tên:</strong> <span>{user.fullname}</span>
+        </div>
+        <div className="mb-3">
+          <strong>Email:</strong> <span>{user.email}</span>
+        </div>
+        <div className="mb-3">
+          <strong>Tên đăng nhập:</strong> <span>{user.username}</span>
+        </div>
+        <div className="mb-3">
+          <strong>Vai trò:</strong> <span>{user.role}</span>
+        </div>
 
-        <button className="btn btn-secondary" onClick={handleBack}>
-          Quay lại
-        </button>
+        <div className="d-flex justify-content-center">
+          <button className="btn btn-secondary" onClick={handleBack}>
+            Quay lại
+          </button>
+        </div>
       </div>
     </div>
   );

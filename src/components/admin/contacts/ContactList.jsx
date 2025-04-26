@@ -42,9 +42,6 @@ const ContactList = () => {
   return (
     <div className="container py-4">
       <h2>Danh sách liên hệ</h2>
-      <Link to="/admin/contacts/trash" className="btn btn-danger mb-3">
-        Xem Thùng rác
-      </Link>
       <table className="table table-bordered table-striped">
         <thead className="thead-dark">
           <tr>

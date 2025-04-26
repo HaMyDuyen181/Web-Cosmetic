@@ -91,13 +91,13 @@ const EditUser = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Chỉnh sửa Người dùng</h2>
+      <h2 className="text-center mb-4">Chỉnh sửa Người dùng</h2>
 
       {error && <div className="alert alert-danger">{error}</div>}
 
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fullname">Họ Tên</label>
+      <form onSubmit={handleSubmit} className="shadow-lg p-4 rounded bg-light">
+        <div className="form-group mb-3">
+          <label htmlFor="fullname" className="form-label">Họ Tên</label>
           <input
             type="text"
             id="fullname"
@@ -109,8 +109,8 @@ const EditUser = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
+        <div className="form-group mb-3">
+          <label htmlFor="email" className="form-label">Email</label>
           <input
             type="email"
             id="email"
@@ -122,8 +122,8 @@ const EditUser = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="username">Tên đăng nhập</label>
+        <div className="form-group mb-3">
+          <label htmlFor="username" className="form-label">Tên đăng nhập</label>
           <input
             type="text"
             id="username"
@@ -135,12 +135,12 @@ const EditUser = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="role">Vai trò</label>
+        <div className="form-group mb-4">
+          <label htmlFor="role" className="form-label">Vai trò</label>
           <input
             type="text"
-            id="username"
-            name="username"
+            id="role"
+            name="role"
             className="form-control"
             value={user.role}
             onChange={handleChange}
@@ -148,11 +148,13 @@ const EditUser = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
+        <button type="submit" className="btn btn-primary w-100">
           Cập nhật Người dùng
         </button>
       </form>
-      <BackButton/>
+      <div className="mt-3 text-center">
+        <BackButton />
+      </div>
     </div>
   );
 };

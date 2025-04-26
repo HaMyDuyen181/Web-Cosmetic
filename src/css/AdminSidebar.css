@@ -1,74 +1,53 @@
-/* AdminSidebar.css */
 .admin-sidebar {
-    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    background-color: #343a40;
-    color: white;
-    min-height: 100%; /* Chiều dài tối thiểu của sidebar bằng chiều dài của content */
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 30px 20px;
-    width: 250px; /* Sidebar mặc định rộng */
-  }
-  
-  .admin-sidebar.closed {
-    width: 60px; /* Khi đóng sidebar, chiều rộng chỉ còn 60px */
-    opacity: 0.5; /* Giảm độ mờ của sidebar khi đóng */
-  }
-  
-  .admin-sidebar.closed .sidebar-title,
-  .admin-sidebar.closed .sidebar-nav {
-    display: none; /* Ẩn tiêu đề và các liên kết khi sidebar đóng */
-  }
-  
-  .toggle-btn {
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .toggle-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .sidebar-title {
-    color: #f8f9fa;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .sidebar-nav {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .sidebar-link {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .sidebar-link:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  .toggle-btn.small-btn {
-    padding: 6px 10px;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 6px;
-  }
-  
+  background-color: #ad5411; /* Nền sidebar màu tối */
+  color: #fff;
+  width: 250px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  padding-top: 20px;
+  position: relative;
+}
+
+.admin-sidebar.closed {
+  width: 60px; /* Thu nhỏ khi đóng */
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.2);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #374151;
+  color: #fff;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+}

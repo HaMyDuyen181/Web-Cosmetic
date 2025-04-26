@@ -18,7 +18,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:7177/api/contact', formData);
+      await axios.post('https://localhost:7177/api/Contact', formData);
       setStatus('Liên hệ thành công!');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {

@@ -64,13 +64,13 @@ const Banners = () => {
               <td>{banner.id}</td>
               <td>
                 {banner.imageUrl ? (
-                  <img
-                    src={banner.imageUrl}
-                    alt={`Banner ${banner.id}`}
-                    width="100"
-                    height="60"
-                    style={{ objectFit: "cover", borderRadius: "4px" }}
-                  />
+                 <img
+                 src={`https://localhost:7177${banner.imageUrl}`}
+                 alt={`Banner ${banner.id}`}
+                 width="100"
+                 height="60"
+                 style={{ objectFit: "cover", borderRadius: "4px" }}
+               />               
                 ) : (
                   <span>Không có ảnh</span>
                 )}

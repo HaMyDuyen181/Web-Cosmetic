@@ -30,21 +30,23 @@ const CreateUser = () => {
       email,
       username,
       password,
-      role, // Lưu ý: role có thể là một giá trị string hoặc array tùy vào cấu trúc backend
+      role,
     };
 
     try {
       const response = await axios.post('https://localhost:7177/api/User', userData, {
         headers: {
-          Authorization: `Bearer ${token}`, // Gửi token trong header
+          Authorization: `Bearer ${token}`,
         },
       });
       setSuccess(true);
       // Điều hướng về trang danh sách người dùng sau khi tạo thành công
-      navigate('/admin/users');
+      setTimeout(() => {
+        navigate('/admin/users');
+      }, 2000); // Thêm delay 2s trước khi điều hướng
     } catch (err) {
       if (err.response && err.response.status === 409 && err.response.data.message) {
-        setError(err.response.data.message); // Hiển thị lỗi từ backend
+        setError(err.response.data.message);
       } else {
         setError('Lỗi khi tạo người dùng. Vui lòng thử lại.');
       }
@@ -52,14 +54,14 @@ const CreateUser = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <h2>Thêm Người dùng</h2>
-      
+    <div className="container mt-5">
+      <h2 className="text-center text-primary mb-4">Thêm Người dùng</h2>
+
       {/* Hiển thị thông báo thành công hoặc lỗi */}
-      {success && <div className="alert alert-success">Người dùng đã được tạo thành công!</div>}
-      {error && <div className="alert alert-danger">{error}</div>}
+      {success && <div className="alert alert-success text-center">Người dùng đã được tạo thành công!</div>}
+      {error && <div className="alert alert-danger text-center">{error}</div>}
       
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
         <div className="mb-3">
           <label className="form-label">Họ tên</label>
           <input
@@ -114,12 +116,16 @@ const CreateUser = () => {
           >
             <option value="">Chọn vai trò</option>
             <option value="user">User</option>
+            <option value="admin">Admin</option> {/* Thêm lựa chọn Admin */}
           </select>
         </div>
         
-        <button type="submit" className="btn btn-primary">Thêm Người dùng</button>
+        <button type="submit" className="btn btn-primary w-100 mt-3">Thêm Người dùng</button>
       </form>
-      <BackButton/>
+
+      <div className="mt-4 text-center">
+        <BackButton />
+      </div>
     </div>
   );
 };
